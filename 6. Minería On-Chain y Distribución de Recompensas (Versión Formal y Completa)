@@ -1,0 +1,80 @@
+6. Minería On-Chain y Distribución de Recompensas (Versión Formal y Completa)
+
+
+---
+
+6.1 Visión General
+
+El Hash Paper Pool Service integra los bloques off-chain previamente construidos en la minería on-chain de Bitcoin, garantizando eficiencia, equidad y continuidad de recompensas. La arquitectura permite que mineros individuales y corporativos reciban pagos proporcionales a su contribución de potencia, al mismo tiempo que se incentiva la adopción educativa de Hash Paper.
+
+
+---
+
+6.2 Selección de Bloques Off-Chain
+
+Los bloques enviados a la mempool contienen transacciones Hash Paper completas, listas para ser minadas.
+
+Los mineros de la pool seleccionan bloques completos, evitando la selección individual de transacciones y optimizando la eficiencia.
+
+Este proceso asegura que todas las transacciones dentro del bloque sean minadas de forma predecible y equitativa.
+
+
+
+---
+
+6.3 Minería On-Chain
+
+Los mineros realizan prueba de trabajo (PoW) sobre los bloques off-chain preconstruidos.
+
+Cada minero aporta hash rate, que determina su voto proporcional dentro del sistema de distribución de recompensas.
+
+La integración con la red Bitcoin mantiene compatibilidad total con el protocolo de consenso original, asegurando seguridad y validación descentralizada.
+
+
+
+---
+
+6.4 Distribución de Recompensas Bitcoin
+
+Las recompensas por minado de Bitcoin se distribuyen proporcionalmente según:
+
+
+\text{Recompensa individual} = \frac{\text{Hash rate aportado por el minero}}{\text{Hash rate total de la pool}} \times \text{Recompensa del bloque}
+
+
+---
+
+6.5 Integración del Pot Educativo Hash Paper
+
+Un porcentaje adicional de ingresos de la pool proviene del Pot educativo Hash Paper, utilizado para incentivar la participación y adopción global.
+
+El Pot funciona como un sistema de recompensas educativas, en el que los participantes reciben pagos diarios por verificar y registrar documentos.
+
+La distribución inicial se realiza entre el 50% de los participantes diarios, decreciendo progresivamente según la adopción y participación global.
+
+Las ganancias pueden ser retiradas bajo términos de servicio, priorizando pagos por servicios de Hash Paper y, opcionalmente, transferencias a claves privadas del usuario.
+
+
+
+---
+
+6.6 Beneficios de la Minería On-Chain Integrada
+
+Equidad: mineros individuales y corporativos reciben recompensas proporcionales a su contribución.
+
+Eficiencia: bloques preconstruidos reducen carga de selección en mempool.
+
+Seguridad: la minería PoW mantiene la integridad y el consenso de Bitcoin.
+
+Incentivo educativo: promueve aprendizaje global de Hash Paper y blockchain.
+
+Transparencia: todas las transacciones y recompensas son verificables en la blockchain y en el registro off-chain de la pool.
+
+
+
+---
+
+6.7 Conexión con Sección 7
+
+La siguiente sección describe participación y adopción, detallando cómo los usuarios y corporaciones integran sus transacciones Hash Paper y cómo el sistema educativo y de recompensas facilita la adopción masiva.
+
