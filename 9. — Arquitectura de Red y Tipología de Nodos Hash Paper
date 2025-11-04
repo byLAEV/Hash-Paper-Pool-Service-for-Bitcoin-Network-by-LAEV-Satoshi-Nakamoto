@@ -1,0 +1,358 @@
+9 — Arquitectura de Red y Tipología de Nodos Hash Paper
+
+9.0 Resumen ejecutivo
+
+Hash Paper opera con una capa off-chain corporativa que arma paquetes transaccionales y una capa on-chain mixta donde mineros y pools consumen paquetes finalizados. El orden de inclusión se define por un algoritmo de eventos secuenciales y el ensamblado Merkle es colaborativo entre builders corporativos. La arquitectura prioriza determinismo, trazabilidad, rendimiento y compatibilidad 100% con Bitcoin Core.
+
+
+---
+
+9.1 Capas y responsabilidades
+
+1. Capa Cliente (Service Clients)
+
+Entidades que generan solicitudes Hash Paper (Amazon, bancos, couriers).
+
+Firmas de origen. Metadatos de servicio. Endpoint: TX_SUBMIT.
+
+
+
+2. Capa Builders (Off-chain Corporate Builders)
+
+Validan, asignan evento_id (Lamport), agrupan leaves y producen subtrees.
+
+Replican event logs. Mantienen SLA corporativo. Endpoint: EVENT_ASSIGN, SUBTREE_ANNOUNCE.
+
+
+
+3. Capa Aggregation / Coordinator (Lógico, no consenso)
+
+Ordena subtrees por algoritmo de eventos. Genera Merkle root final. Firma FINALIZE.
+
+Puede ser implementado como servicio distribuido (rotativo) o como función determinista ejecutada por todos los builders. Endpoint: FINALIZE_PACKAGE.
+
+
+
+4. Capa Relay / Index (Relays privados y públicos)
+
+Almacenan paquetes finalizados, responden REQUEST_BLOCK, anuncian ANNOUNCE_ID.
+
+Implementan políticas de aceptación, replication y priorización.
+
+
+
+5. Capa Miner/Pool (On-chain mixta)
+
+Descargan paquetes, ensamblan coinbase y minan header con Merkle root final.
+
+Integración Stratum V2 opcional para job distribution. Endpoint: REQUEST_BLOCK, SUBMIT_MINED_BLOCK.
+
+
+
+6. Capa Reward Distributor & Custody
+
+Recibe fee_total off-chain. Ejecuta reparto pro-rata a mineros y pagadores (posible integración on-chain en coinbase cuando aplique).
+
+
+
+7. Observability / Auditoría
+
+Explorador Hash Paper, logs de eventos, API de proofs, métricas SLA y auditorías KYC/SLAs corporativas.
+
+
+
+
+
+---
+
+9.2 Tipología de nodos y requisitos
+
+A. Proposer / Client Node (Amazon-type)
+
+Rol: generar TX_SUBMIT firmadas por la entidad.
+
+HW: servidor redundante (2 x CPU, 16 GB RAM, NVMe 500 GB), HSM opcional para claves.
+
+Conectividad: TLS 1.3, 1 Gbps recommended.
+
+SLA: 99.9% availability, request latency < 200 ms.
+
+
+B. Builder Node (corporate validator)
+
+Rol: recibe TX, verifica, asigna lamport_ts, mantiene event log, produce subtree.
+
+HW: 4+ cores, 32 GB RAM, NVMe 1 TB, 10 Gbps uplink advisable en grandes volumes.
+
+Software: motor de verificación, reloj lógico, cola de mensajes segura (gRPC/HTTP2).
+
+Security: keys in HSM or KMS, mutual TLS, mTLS for inter-builder.
+
+SLA: 99.95% availability, replication_factor >= 3.
+
+
+C. Aggregator / Coordinator (logic)
+
+Rol: ordenar subtrees y FINALIZE.
+
+Implementación: función determinista distribuida; puede ejecutarse en cada builder para evitar single point of failure.
+
+HW: similar a Builder. Additional quorum signer module (MuSig support).
+
+Security: threshold signing (MuSig2 / Schnorr), access control.
+
+
+D. Relay / Index Node
+
+Rol: almacena packages, serve requests, announces to pools.
+
+HW: high I/O, SSD arrays, 10 Gbps recommended.
+
+Features: rate limiting, package validation, TTL enforcement, cache eviction.
+
+Policies: fee_min thresholds, expiry enforcement.
+
+
+E. Miner / Pool Node (on-chain mixed)
+
+Rol: request package, assemble coinbase, mine, submit block.
+
+Integration: Stratum V2, job templates, support for job IDs referencing package IDs.
+
+HW: according to mining hardware (ASIC farms). Network: low-latency peers to relays.
+
+
+F. Reward Distributor / Custody
+
+Rol: collect service fees, split per policy, disburse.
+
+Implementation: multisig, custodial smart contracts off-chain, optional on-chain settlement.
+
+
+G. Auditor / Observer Nodes
+
+Rol: read-only, recompute proofs, provide third-party verification.
+
+HW: modest. API endpoints for proof retrieval.
+
+
+
+---
+
+9.3 Topología de red y comunicación
+
+Overlay network privada corporativa entre builders y relays. Mensajería sobre gRPC/HTTP2 con mutual TLS.
+
+Public relays opcionales para discovery y para mineros públicos. Anuncios ANNOUNCE_ID publicados por relays públicos con firmas del package.
+
+Replication: cada tx enviada a ≥ 3 builders. Cada subtree replicado a ≥ 2 relays.
+
+Channels:
+
+TX_SUBMIT (client → builders).
+
+EVENT_ASSIGN (builder → builders/relays).
+
+SUBTREE_ANNOUNCE (builder → relays/index).
+
+REQUEST_SUBTREE / SUBTREE_PAYLOAD (miner/relay ↔ builder).
+
+FINALIZE_PACKAGE (aggregator → relays).
+
+SUBMIT_MINED_BLOCK (miner → relay/bitcoin nodes).
+
+
+
+
+---
+
+9.4 Formatos, APIs y mensajes (resumen)
+
+Mensajes JSON firmados. Campos mínimos:
+
+TX_SUBMIT: { tx_id, tx_body, proposer_id, proposer_sig, service_tag, ts }
+
+EVENT_ASSIGN: { tx_id, lamport_ts, builder_id, builder_sig }
+
+SUBTREE_ANNOUNCE: { subtree_id, event_range, subtree_root, builder_id, builder_sig }
+
+FINALIZE_PACKAGE: { package_id, merkle_root_final, event_range, builders[], signatures[], fee_total, expiry }
+
+REQUEST_BLOCK: { package_id }
+
+SUBTREE_PAYLOAD: { package_id, txs[], proofs[], metadata }
+
+SUBMIT_MINED_BLOCK: standard serialized Bitcoin block.
+
+
+Firma: Schnorr (BIP-340) preferido. MuSig2 para firmas agregadas de builders.
+
+Transporte: gRPC (preferred), fallback HTTPS+JSON.
+
+
+
+---
+
+9.5 Algoritmo de orden (resumen técnico)
+
+Clocks lógicos de Lamport + tie-breaker builder_id.
+
+Event log replicado y determinista.
+
+Deterministic ordering function Order(events) -> total_sequence.
+
+Builders reconstruct sequence on missing events via REQUEST_MISSING_EVENTS.
+
+
+
+---
+
+9.6 Ensamblado Merkle y finalización
+
+Builders producen subtree_root = Merkle(leaves_local); leaves ordered by assigned events.
+
+Aggregator concatenates subtree roots en orden determinista:
+merkle_root_final = H_concat(H_subtree_1 || H_subtree_2 || ... || metadata)
+
+Firma de finalización: quorum de builders o MuSig aggregated signature.
+
+Opcional anchor on-chain: OP_RETURN(package_id, merkle_root_final).
+
+
+
+---
+
+9.7 Seguridad y gobernanza operativa
+
+Identidad y KYC
+
+Builders corporativos verificados. Certificados X.509 para mTLS. KYC si se requiere por regulación.
+
+
+Llaves y firma
+
+Claves en HSM/KMS. MuSig2 para firmas colectivas. Rotación de claves periódica.
+
+
+Anti-Sybil y stake
+
+Reputación y staking/deposit opcionales para builders. Penalizaciones y slashing en caso de fraude.
+
+
+Protecciones DDoS/DoS
+
+Rate limiting, proof-of-work-lite para proposers abusivos, fee_min thresholds, deposits.
+
+
+Conflictos y revocación
+
+Packages incluyen expiry y revocation_sig list. Revocación antes de FINALIZE permitida. Si mined, resolución por reglas on-chain.
+
+
+
+---
+
+9.8 Requisitos de despliegue y escalabilidad
+
+Deployment pattern
+
+Stage 1: testnet con 3 builders (Amazon + 2 partners).
+
+Stage 2: private beta con 10 builders y 3 relays.
+
+Stage 3: public relays y onboarding de pools miners.
+
+
+Scaling knobs
+
+replication_factor, max_txs_per_package, expiry_window, subtree_sharding.
+
+Sharding de event ranges por namespace (e.g., vendor_id) para paralelismo.
+
+
+
+---
+
+9.9 Métricas, SLAs y monitoreo
+
+Métricas clave
+
+Latencia TX_SUBMIT → FINALIZE (s).
+
+Time to propagation to relays (s).
+
+Acceptance rate (packages/miners accept).
+
+Orphan rate (packages mined but orphaned).
+
+Availability builders/relays (%).
+
+
+SLA targets (ejemplo corporativo)
+
+Builder availability: 99.95%
+
+Event log convergence: 99% within 2 s for local clusters
+
+Package finalization latency: < 300 s (configurable)
+
+Replication factor: ≥ 3
+
+
+Monitoring
+
+Prometheus + Grafana metrics. Alerting on convergence lag, replication lag, unusual revocations.
+
+
+
+---
+
+9.10 Onboarding corporativo y compliance
+
+API keys, mTLS cert, KYC contract, SLA contract.
+
+Test vectors y sandbox para validación.
+
+Compliance hooks: data retention policies, GDPR-safe metadata handling (store sensitive data off-chain).
+
+Legal: agreements for fee flows, liability clauses, audit rights.
+
+
+
+---
+
+9.11 Reparto económico y contratos operativos
+
+Fee flow: client → Hash Paper custody wallet (multisig) → Reward Distributor.
+
+Distribución: r_j = (H_j / H_pool) * (R_btc + R_hp) o reglas alternativas definidas por contrato.
+
+Opcional: contratos de servicio (SLA) que devuelven fees si package falls below inclusion guarantees.
+
+
+
+---
+
+9.12 Riesgos operativos y mitigaciones resumidas
+
+Adopción insuficiente: pilotos con grandes corporates (Amazon) para dar volumen.
+
+Ataques de disponibilidad: replication, rate limits, deposits.
+
+Centralización de builders: políticas de apertura y cuotas geográficas.
+
+Race/orphaning: anchors on-chain opcionales para paquetes de alto valor y amplia replicación a relays.
+
+
+
+---
+
+9.13 Apéndice técnico (implementación mínima viable)
+
+Protocolo inicial: gRPC + JSON, Schnorr signatures, MuSig2 support, Stratum V2 integration path.
+
+Minimum stack: PostgreSQL event log, Redis for fast replication, storage in S3 for subtree payloads, K8s for orchestration, Prometheus/Grafana for observability.
+
+Testnet plan: scripts de stress, fault-injection, adversarial tests for double-spend and revocation.
+
+
