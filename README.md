@@ -1467,52 +1467,6 @@ Con esto, Hash Paper Pool Service consolida su objetivo central: transformar la 
 
 *************
 
-13. Modelo Económico Global y Proyección de Sostenibilidad
-
-Esta sección establece el marco financiero y económico del Hash Paper Pool Service for Bitcoin Network, integrando la distribución de recompensas, costos operativos y proyección de adopción global. Su objetivo es demostrar que el sistema es sostenible, escalable y atractivo para mineros, usuarios corporativos y participantes educativos.
-
-
----
-
-13.1 Flujo de Ingresos
-
-El ecosistema de Hash Paper genera ingresos de varias fuentes:
-
-1. Servicios corporativos de Hash Paper:
-
-Empresas como Amazon pagan por cada documento o transferencia certificada con Hash Paper, garantizando trazabilidad y veracidad.
-
-Cada pago se deposita directamente en la billetera de la Hash Paper Pool, asegurando que los fondos estén disponibles para recompensas sin depender de intermediarios.
-
-
-
-2. Adopción educativa (Hash Paper Pot):
-
-Los tickets de participación educativa generan un flujo diario de ingresos que se agrega al Pot central, financiado por pequeñas comisiones y participación masiva de usuarios.
-
-Este flujo permite que cualquier persona, sin conocimientos técnicos, pueda participar y recibir recompensas.
-
-
-
-3. Minería de Bitcoin (PoW):
-
-La contribución de potencia de hash a la red Bitcoin genera ingresos tradicionales de minería.
-
-Estos ingresos se combinan con las recompensas del Pot educativo y las comisiones corporativas para maximizar la rentabilidad de cada participante.
-
-
-
-4. Servicios adicionales y futuras expansiones:
-
-Licencias de software HPUS, integración con notarías y gobiernos, y venta de APIs para terceros.
-
-
-
-
-
----
-
-13.2 Distribución de Recompensas
 
 La distribución de recompensas está diseñada para incentivar participación masiva y sostenible:
 
@@ -1542,6 +1496,89 @@ Cada flujo de ingresos, distribución de recompensas y participación se registr
 
 ---
 
+13. Modelo Económico Global y Proyección de Sostenibilidad
+
+Esta sección establece el marco financiero y económico del Hash Paper Pool Service for Bitcoin Network, integrando la distribución de recompensas, costos operativos y proyección de adopción global. Su objetivo es demostrar que el sistema es sostenible, escalable y atractivo para mineros, usuarios corporativos y participantes educativos, mientras refuerza la comprensión y uso de Bitcoin a nivel mundial.
+
+
+---
+
+13.1 Flujo de Ingresos
+
+El ecosistema de Hash Paper genera ingresos de varias fuentes:
+
+1. Servicios corporativos de Hash Paper:
+
+Empresas como Amazon pagan por cada documento o transferencia certificada con Hash Paper, garantizando trazabilidad y veracidad.
+
+Cada pago se deposita directamente en la billetera de la Hash Paper Pool, asegurando disponibilidad para recompensas sin depender de intermediarios.
+
+
+
+2. Adopción educativa (Hash Paper Pot):
+
+Los tickets de participación educativa generan un flujo diario de ingresos que se agrega al Pot central, financiado por pequeñas comisiones y participación masiva de usuarios.
+
+Este flujo permite que cualquier persona, sin conocimientos técnicos, pueda participar y recibir recompensas, reforzando la educación práctica sobre Bitcoin y trazabilidad documental.
+
+
+
+3. Minería de Bitcoin (PoW):
+
+La contribución de potencia de hash a la red Bitcoin genera ingresos tradicionales de minería.
+
+Estos ingresos se combinan con las recompensas del Pot educativo y las comisiones corporativas para maximizar la rentabilidad de cada participante.
+
+
+
+4. Servicios adicionales y futuras expansiones:
+
+Licencias de software HPUS, integración con notarías y gobiernos, y venta de APIs para terceros.
+
+
+
+
+
+---
+
+13.2 Distribución de Recompensas y Retiro
+
+La distribución de recompensas está diseñada para incentivar participación masiva y reflejar la naturaleza descentralizada de Bitcoin:
+
+1. Hash Paper Pot:
+
+Inicialmente, 50 % de los participantes diarios ganan el Pot, incentivando adopción y aprendizaje práctico.
+
+La proporción de distribución disminuye progresivamente conforme aumenta la adopción global, simulando torneos de póker: cuantos más participantes, menor porcentaje por ganador, manteniendo el atractivo económico.
+
+
+
+2. Mineros y pools corporativos:
+
+Todos los ingresos de servicios corporativos se distribuyen proporcionalmente entre los mineros que aportan potencia, garantizando que la rentabilidad sea equivalente a su contribución energética y de infraestructura.
+
+
+
+3. Retiros de ganancias:
+
+Los participantes pueden retirar sus recompensas en Bitcoin, reflejando el valor real y transferible de lo ganado.
+
+Para facilitar la seguridad y trazabilidad, los retiros se efectúan mediante un procedimiento formal que incluye la firma de un documento de solicitud de retiro, asociado al pago de servicios Hash Paper.
+
+Este mecanismo asegura que la transacción sea auditable y legalmente válida, sin limitar la libertad del usuario de disponer de sus fondos en cualquier lugar o jurisdicción compatible con Bitcoin.
+
+
+
+4. Transparencia y trazabilidad:
+
+Cada flujo de ingresos, distribución de recompensas y participación se registra en hashes auditables en la red Bitcoin, asegurando transparencia total sin intermediarios.
+
+
+
+
+
+---
+
 13.3 Costos Operativos y Eficiencia Energética
 
 Nodos y servidores off-chain:
@@ -1555,7 +1592,7 @@ Mantenimiento de HPUS:
 
 Interfaz administrativa para mineros, integración corporativa y seguimiento educativo.
 
-Se planifica reducción de costos mediante virtualización, consolidación de nodos y uso eficiente de recursos energéticos.
+Reducción de costos mediante virtualización, consolidación de nodos y uso eficiente de recursos energéticos.
 
 
 Minimización de gastos operativos:
@@ -1571,9 +1608,7 @@ Un porcentaje de cada ingreso se destina exclusivamente a cubrir gastos, asegura
 
 Crecimiento de usuarios individuales:
 
-Se espera un aumento progresivo gracias al sistema educativo y recompensas atractivas.
-
-Los tickets de participación facilitan la entrada de usuarios sin conocimientos de criptografía.
+Se espera un aumento progresivo gracias al sistema educativo y recompensas atractivas, facilitando el aprendizaje práctico de Bitcoin.
 
 
 Participación corporativa:
@@ -1595,7 +1630,9 @@ El modelo asegura que los ingresos superen los costos operativos, permitiendo cr
 
 ---
 
-Esta sección concluye que el modelo económico de Hash Paper es integral, combinando educación, minería y servicios corporativos, asegurando que el ecosistema sea autosuficiente, atractivo para mineros y usuarios, y escalable a nivel global.
+Esta redacción refleja que los usuarios tienen libertad total sobre sus ganancias, reforzando el aprendizaje de Bitcoin como dinero real, mientras el sistema sigue incentivando la adopción educativa y la trazabilidad documental a través de Hash Paper.
+
+
 
 **************
 
