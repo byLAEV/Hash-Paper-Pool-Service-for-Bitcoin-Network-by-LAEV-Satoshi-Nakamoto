@@ -33,7 +33,7 @@ Hash Paper Pool Service integra trazabilidad de documentos y minería de Bitcoin
 10. Estrategia Global de Adopción y Mecanismo Educativo Hash Paper Pot
 
 
-11. Gestión de Riesgos y Prevención de Abuso de Identificadores
+11.  Gobernanza, Política de Incentivos y Control Descentralizado
 
 
 12. Educación Global y Adopción Masiva del Sistema Hash Paper
@@ -1300,3 +1300,101 @@ Hash Paper confirma que su modelo se ejecuta sobre la red descentralizada de Bit
 Toda recompensa, ingreso o ganancia se asigna directamente a la dirección controlada por el usuario.
 Ninguna autoridad, empresa o entidad central puede revertir, modificar o acceder a dichas transacciones.
 La clave privada constituye la única prueba de propiedad y la única vía de acceso a los fondos. Hash Paper no ofrece servicios de recuperación o reemplazo de claves privadas.
+
+***********
+
+Sección 11 — Gobernanza, Política de Incentivos y Control Descentralizado
+
+11.1 — Naturaleza Organizativa
+
+Hash Paper se define como una empresa descentralizada basada en prueba de trabajo (Proof of Work Governance Model).
+Aunque presta servicios verificables y comercializables, no opera como una empresa tradicional con jerarquías o estructuras corporativas centralizadas.
+La toma de decisiones, el flujo económico y la validación técnica se ejecutan bajo un sistema autónomo de gobernanza donde cada participante representa un nodo activo y un voto computacional, conforme al principio “un minero, un voto”.
+
+11.2 — Estructura de Autoridad
+
+El modelo de autoridad en Hash Paper se distribuye según tres niveles operativos:
+
+1. Mineros de Hash Paper (Proof Workers):
+
+Ejecutan la prueba de trabajo descentralizada y validan bloques off-chain y on-chain.
+
+Cada minero tiene derecho a voto proporcional a su participación activa, no a su capital económico.
+
+Su rol principal es mantener la red operativa, segura y verificable.
+
+
+
+2. Nodos Corporativos y de Servicio (Hash Service Nodes):
+
+Empresas y entidades que utilizan Hash Paper para trazabilidad o certificación documental (como Amazon u otras).
+
+No poseen control sobre la red ni voto de gobernanza, pero pueden proponer mejoras y financiar desarrollos.
+
+Sus interacciones están mediadas por contratos inteligentes y protocolos auditables.
+
+
+
+3. Hash Paper Council:
+
+Consejo técnico de coordinación, sin poder ejecutivo.
+
+Define actualizaciones, compatibilidades, parámetros de consenso y políticas de incentivos.
+
+Su composición rota mediante votación de los mineros activos, manteniendo la descentralización funcional.
+
+
+
+
+11.3 — Política de Incentivos
+
+Las recompensas derivadas de minería, validación y servicios de verificación se distribuyen automáticamente bajo algoritmos de transparencia auditables por toda la red.
+
+No existe intermediación humana en el reparto de beneficios.
+
+Los incentivos se dividen entre:
+
+1. Prueba de trabajo on-chain.
+
+
+2. Verificación off-chain de documentos Hash Paper.
+
+
+3. Recompensas educativas y de adopción (Hash Paper Pot).
+
+
+
+Las recompensas de gobernanza se asignan a los mineros que participen activamente en votaciones y auditorías técnicas.
+
+
+11.4 — Mecanismo de Votación
+
+El principio rector es un minero, un voto.
+Cada bloque validado otorga derecho temporal de voto al minero que lo generó o participó en su validación.
+El voto tiene peso igualitario, independiente de la cantidad de ASICs, inversión o capital individual.
+Las decisiones sobre parámetros de red, actualizaciones o reparto de recompensas se someten a votación periódica bajo el Protocolo de Gobernanza Hash Paper (HPGP).
+
+11.5 — Transparencia y Auditoría
+
+Todos los votos, recompensas y actualizaciones se registran en estructuras hash públicas e inmutables.
+
+El código fuente del sistema de gobernanza se publica bajo licencia abierta auditada.
+
+Cualquier participante puede verificar las decisiones, flujos de recompensa y resultados de votaciones mediante exploradores Hash Paper.
+
+
+11.6 — Propósito del Modelo de Gobernanza
+
+El modelo tiene tres objetivos principales:
+
+1. Evitar la centralización de poder, tanto técnico como financiero.
+
+
+2. Garantizar continuidad y neutralidad del proyecto Hash Paper sin dependencia de figuras individuales.
+
+
+3. Fomentar la participación masiva y legítima en un ecosistema de minería educativa, documental y económica.
+
+
+************
+
