@@ -27,10 +27,10 @@ Hash Paper Pool Service integra trazabilidad de documentos y minería de Bitcoin
 8. Protocolo de Consenso, Seguridad Criptográfica y Validación Off-chain
 
 
-9 — Arquitectura de Red y Tipología de Nodos Hash Paper
+9.  Arquitectura de Red y Tipología de Nodos Hash Paper
 
 
-10. Algoritmo de Secuenciación y Árboles de Merkle
+10. Estrategia Global de Adopción y Mecanismo Educativo Hash Paper Pot
 
 
 11. Gestión de Riesgos y Prevención de Abuso de Identificadores
@@ -1241,3 +1241,62 @@ Testnet plan: scripts de stress, fault-injection, adversarial tests for double-s
 **********
 
 
+Sección 10 — Estrategia Global de Adopción y Mecanismo Educativo Hash Paper Pot
+
+10.1 — Principio General
+
+El sistema Hash Paper Pot constituye el mecanismo oficial de adopción mundial del servicio Hash Paper Pool Service for Bitcoin Network, cuyo propósito es educar, incentivar y expandir el uso del sistema de verificación y trazabilidad documental basado en la red Bitcoin.
+Este modelo busca integrar a toda persona interesada en aprender, verificar y utilizar Hash Paper mediante una estructura económica participativa y transparente.
+
+10.2 — Mecanismo del Pot
+
+El Pot se forma diariamente a partir de diversas fuentes de ingresos, incluyendo comisiones de servicio, convenios corporativos, minería off-chain y contribuciones institucionales.
+El 100 % del Pot se distribuye entre los participantes según las siguientes reglas:
+
+Hasta el 50 % de los participantes serán seleccionados como beneficiarios del Pot diario.
+
+El porcentaje de distribución disminuirá progresivamente conforme aumente la adopción y la cantidad de participantes, hasta llegar a un modelo de reparto ponderado por mérito, validación y participación educativa.
+
+Cada usuario participa mediante la generación de un Hash único (SHA-256) que representa su identidad en el ecosistema y lo acompaña durante toda su relación con Hash Paper.
+
+
+10.3 — Naturaleza Educativa y Social
+
+El Pot no constituye una lotería ni un juego de azar, sino un sistema educativo incentivado diseñado para fomentar la comprensión y uso de la tecnología Bitcoin aplicada a la verificación documental.
+Los participantes aprenden a crear, verificar e imprimir documentos con huella criptográfica, utilizando las recompensas obtenidas para adquirir servicios reales dentro del ecosistema (por ejemplo, tramitación notarial, contratos o comprobantes certificados en Hash Paper).
+
+10.4 — Condiciones de Participación
+
+1. Toda participación se registra mediante un hash único e inmutable generado por el sistema Hash Paper.
+
+
+2. Las ganancias obtenidas solo pueden retirarse mediante direcciones Bitcoin bajo control exclusivo del usuario.
+
+
+3. Hash Paper no tiene acceso, control ni custodia de las claves privadas.
+
+
+4. La propiedad y seguridad de las claves privadas corresponden enteramente al usuario.
+
+
+5. Los fondos distribuidos por el Pot son acreditados directamente en la red Bitcoin, sin intermediarios ni retención alguna.
+
+
+6. El retiro de ganancias podrá estar restringido en ciertos territorios conforme a regulaciones locales. En tales casos, el usuario podrá retirar sus fondos únicamente desde jurisdicciones donde tales operaciones sean legalmente permitidas.
+
+
+7. Las ganancias mínimas deberán utilizarse prioritariamente en el pago de servicios Hash Paper, fortaleciendo la economía interna del sistema.
+
+
+
+10.5 — Periodo de Adopción Global
+
+Durante la fase de adopción mundial, el Pot funcionará como herramienta principal de introducción tecnológica y de recompensas.
+Finalizado este periodo, Hash Paper podrá implementar un sistema de sorteos o torneos oficiales (de carácter recreativo o económico), permitiendo que los usuarios utilicen sus recompensas educativas acumuladas para participar en dichos eventos, bajo estrictas condiciones de transparencia y auditoría criptográfica.
+
+10.6 — Custodia Descentralizada
+
+Hash Paper confirma que su modelo se ejecuta sobre la red descentralizada de Bitcoin y no actúa como custodio financiero.
+Toda recompensa, ingreso o ganancia se asigna directamente a la dirección controlada por el usuario.
+Ninguna autoridad, empresa o entidad central puede revertir, modificar o acceder a dichas transacciones.
+La clave privada constituye la única prueba de propiedad y la única vía de acceso a los fondos. Hash Paper no ofrece servicios de recuperación o reemplazo de claves privadas.
