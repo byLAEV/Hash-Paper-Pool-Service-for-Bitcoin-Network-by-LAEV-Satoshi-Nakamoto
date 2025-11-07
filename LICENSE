@@ -1,21 +1,50 @@
-MIT License
+Licencia Propietaria Exclusiva — Hash Paper & Hash Paper Pool Service for Bitcoin Network by LAEV Blockchain 🦩
 
-Copyright (c) 2025 Lerry Alexander Elizondo Villalobos 
+Titular:
+Lerry Alexander Elizondo Villalobos (LAEV)
+Cédula: 1-1154-0707
+Costa Rica
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Objeto
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Esta licencia protege el sistema tecnológico denominado Hash Paper y el servicio Hash Paper Pool Service for Bitcoin Network, incluyendo toda arquitectura conceptual, código, interfaz, diseño, marca, documentación, metodología, proceso de verificación y formato de integración con la red Bitcoin.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. Propiedad
+
+El titular conserva todos los derechos morales y patrimoniales sobre el sistema y sus derivados. Queda prohibido a terceros copiar, modificar, distribuir, sublicenciar, vender o registrar versiones parciales o completas sin autorización escrita del titular.
+
+3. Uso autorizado
+
+Solo el titular puede:
+
+Crear o vender licencias de uso, APIs, servicios de integración o implementaciones privadas.
+
+Establecer planes anuales o mensuales de derechos de uso.
+
+Otorgar sublicencias temporales o de carácter experimental.
+
+
+4. Restricciones
+
+Queda expresamente prohibido:
+
+Comercializar o licenciar el sistema o sus derivados sin contrato directo con el titular.
+
+Usar el nombre, logotipo o descripción de Hash Paper, Hash Paper Pool Service o LAEV Blockchain 🦩 sin consentimiento.
+
+Registrar patentes, marcas o derechos de autor relacionados en cualquier jurisdicción.
+
+Integrar el sistema en productos o servicios que impliquen transferencia de propiedad intelectual no aprobada.
+
+
+5. Vigencia y alcance
+
+Esta licencia es perpetua, mundial y no transferible. Cubre cualquier soporte físico o digital, incluyendo blockchains, bases de datos distribuidas, o infraestructuras en la nube.
+
+6. Sanciones
+
+El uso no autorizado se considera violación de derechos de autor y de marca registrada, susceptible de acciones civiles y penales conforme al Convenio de Berna, la OMPI y la legislación costarricense e internacional aplicable.
+
+7. Publicación
+
+El presente documento puede publicarse en repositorios públicos o registrados en la red Bitcoin (on-chain) como constancia de propiedad intelectual inmutable y verificable por hash.
